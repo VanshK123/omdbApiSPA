@@ -1,0 +1,24 @@
+<a mat-stroked-button href="/search">Search</a>
+<input type="checkbox" (change)="check($event)"> Less than 10 year old
+
+<table>
+    <tbody>
+      <tr *ngFor="let x of movies">
+        <div *ngIf="val == 1">
+          <div *ngIf="(year - x.Year) < 10">
+            <td>{{x.Title}}</td>
+             <td><img src="{{x.Poster}}" height = '128' width="128"></td>
+             <td>{{x.Year}}</td>
+          </div>
+        </div>
+        <div *ngIf="val == 0">
+        <td>{{x.Title}}</td>
+        <td><img src="{{x.Poster}}" height = '128' width="128"></td>
+        <td>{{x.Year}}</td>
+      </div>
+      </tr>
+    </tbody>
+  </table>
+
+  <button mat-flat-button (click)="back()" [routerLink]="['/search', value,'p',p-1 ]">Back</button>
+  <button mat-flat-button (click)="forward()" [routerLink]="['/search', value,'p',p+1 ]">Next</button>
