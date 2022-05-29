@@ -33,6 +33,7 @@ export class MovComponent implements OnInit {
     //console.log(this.movies)
   this.value = this.route.snapshot.paramMap.get('mov')
   this.p = this.route.snapshot.paramMap.get('page')
+  this.p = Number(this.p)
   this.getMoviesPage();
   }
   forward(){

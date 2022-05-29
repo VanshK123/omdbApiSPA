@@ -1,7 +1,9 @@
 <button [routerLink]="['/search']" >
   Search
 </button>
-
+<br>
+<button button (click)="back()" [routerLink]="['/search', value,p-1 ]">Back</button>
+  <button button (click)="forward()" [routerLink]="['/search', value,p+1 ]">Next</button>
 
 <input type="checkbox" (change)="check($event)"> Less than 10 year old
 
