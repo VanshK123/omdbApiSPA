@@ -1,4 +1,8 @@
-<a mat-stroked-button href="/search">Search</a>
+<button [routerLink]="['/search']" >
+  Search
+</button>
+
+
 <input type="checkbox" (change)="check($event)"> Less than 10 year old
 
 <table>
@@ -20,5 +24,5 @@
     </tbody>
   </table>
 
-  <button mat-flat-button (click)="back()" [routerLink]="['/search', value,'p',p-1 ]">Back</button>
-  <button mat-flat-button (click)="forward()" [routerLink]="['/search', value,'p',p+1 ]">Next</button>
+  <button button (click)="back()" [routerLink]="['/search', value,'p',p-1 ]">Back</button>
+  <button button (click)="forward()" [routerLink]="['/search', value,'p',p+1 ]">Next</button>

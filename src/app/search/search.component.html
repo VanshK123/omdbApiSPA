@@ -1,24 +1,22 @@
 <main role="main">
 
-    <mat-card class="search-box">
+   
 
  <form class = "searchBar">
     
-    <mat-form-field appearance="standard" class="search-input" >
+  
         <input matInput [formControl]="searchFormControl" type="text" autocomplete="off" autofocus matInput placeholder="Search">
-    </mat-form-field>
+ 
      
-    
-     
-  <a mat-fab class="search-button"  [routerLink]="['/search', value,'p',p ]" >
-    <mat-icon>search</mat-icon>
-  </a>
-  <p>   </p>
+  <button [routerLink]="['/search', value,'p',p ]" >
+    Search
+  </button>
+  
   
   
 
 </form>
- </mat-card> 
+ 
   
 
   </main>
