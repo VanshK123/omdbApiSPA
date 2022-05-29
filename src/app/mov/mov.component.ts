@@ -24,7 +24,7 @@ export class MovComponent implements OnInit {
   currentYear: number=new Date().getFullYear();
   year = this.currentYear
   
-  val = 0
+  val: boolean = false;
   constructor(private temp: MovieSearch,private appService: AppService, private route: ActivatedRoute) { }
   
   ngOnInit(): void {
@@ -62,10 +62,11 @@ export class MovComponent implements OnInit {
   }
   check(event:any){
     if(event.target.checked){
-    this.val = 1
+    this.val = true
+    
     }
     else{
-      this.val = 0
+      this.val = false;
     }
   }
   
