@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {SearchComponent} from '../search/search.component'
 import { AppService } from '../app.service';
 import { MovieSearch } from '../mov/app.movie';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class SearchMov {
     //value: any;
     p: number = 1
     isDone = true;
-    constructor(private appService: AppService, private mov: MovieSearch) { }
-
+    constructor(private appService: AppService, private mov: MovieSearch, private route:ActivatedRoute) { }
+  
     getVal(title:any){
         this.getMovies(title,this.p)
     }

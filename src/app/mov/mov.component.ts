@@ -5,6 +5,8 @@ import {SearchComponent} from '../search/search.component'
 import { SearchMov } from '../search/app.searchMov';
 import { MovieSearch } from './app.movie';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+
 
 
 @Component({
@@ -17,18 +19,21 @@ export class MovComponent implements OnInit {
   movies: any[] = [];
   
   value: any;
-  p: number = 1
+  p: any = 1
   isDone = true;
   currentYear: number=new Date().getFullYear();
   year = this.currentYear
   
   val = 0
-  constructor(private temp: MovieSearch,private appService: AppService) { }
+  constructor(private temp: MovieSearch,private appService: AppService, private route: ActivatedRoute) { }
   
   ngOnInit(): void {
-    this.movies = this.temp.valSend();
-    this.value = this.temp.titleSend();
+    
+    //this.value = this.temp.titleSend();
     //console.log(this.movies)
+  this.value = this.route.snapshot.paramMap.get('mov')
+  this.p = this.route.snapshot.paramMap.get('page')
+  this.getMoviesPage();
   }
   forward(){
     this.p = this.p + 1
