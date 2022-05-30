@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppService } from './app.service';
+import { MovieService } from './movie.service';
 import { SearchComponent } from './search/search.component';
 import { MovComponent } from './mov/mov.component';
 
@@ -24,8 +24,6 @@ import { MovComponent } from './mov/mov.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
     HttpClientModule,
     NgbModule,
     FormsModule,

@@ -1,23 +1,11 @@
 <main role="main">
-
-   
-
  <form class = "searchBar">
-    
-  
-        <input matInput [formControl]="searchFormControl" type="text" autocomplete="off" autofocus matInput placeholder="Search">
+    <input  [formControl]="searchFormControl" type="text" autocomplete="off"  placeholder="Search">
+   
+     <button [routerLink]="['/search', value,1 ]" >
+      Search
+    </button>
  
-     
-  <button [routerLink]="['/search', value,p ]" >
-    Search
-  </button>
-  
-  
-  
-
-</form>
- 
-  
-
-  </main>
+  </form>
+</main>
   

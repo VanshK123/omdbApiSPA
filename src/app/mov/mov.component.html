@@ -1,33 +1,31 @@
-<button [routerLink]="['/search']" >
+<button [routerLink]="['/search']">
   Search
 </button>
 <br>
 <button button (click)="back()" [routerLink]="['/search', value,p-1 ]">Back</button>
-  <button button (click)="forward()" [routerLink]="['/search', value,p+1 ]">Next</button>
+<button button (click)="forward()" [routerLink]="['/search', value,p+1 ]">Next</button>
 
 <input type="checkbox" (change)="check($event)"> Less than 10 year old
+
 <div *ngFor="let item of [].constructor(1); let i = index">
-<table>
+  <table>
     <tbody>
       <tr *ngFor="let x of movies; let i = index">
-        <div *ngIf = "i < 10">
-        <div *ngIf="val">
-          <div *ngIf="(year - x.Year) < 10">
-            <td>{{x.Title}}</td>
-             <td><img src="{{x.Poster}}" height = '128' width="128"></td>
-             <td>{{x.Year}}</td>
-          </div>
-        </div>
-        <div *ngIf="!val">
-        <td>{{x.Title}}</td>
-        <td><img src="{{x.Poster}}" height = '128' width="128"></td>
-        <td>{{x.Year}}</td>
-      </div>
-      </div>
+        <ng-container *ngIf="(checked && ((year - x.year) < 10)) || (!checked)">
+          <td>
+            <span>{{x.title}}</span>
+          </td>
+          <td>
+            <span>{{x.year}}</span>
+          </td>
+          <td>
+            <span><img src="{{x.poster}}" height='128' width="128"></span>
+          </td>
+        </ng-container>
       </tr>
-    </tbody>
 
+    </tbody>
   </table>
 </div>
-  <button button (click)="back()" [routerLink]="['/search', value,p-1 ]">Back</button>
-  <button button (click)="forward()" [routerLink]="['/search', value,p+1 ]">Next</button>
+<button button (click)="back()" [routerLink]="['/search', value,p-1 ]">Back</button>
+<button button (click)="forward()" [routerLink]="['/search', value,p+1 ]">Next</button>
