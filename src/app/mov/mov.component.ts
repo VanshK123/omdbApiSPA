@@ -16,7 +16,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class MovComponent implements OnInit {
-  movies: any[] = [];
+  movies: any[] = [
+    {title: '',poster:'',year: '',}
+  ];
   
   value: any;
   p: any = 1
@@ -35,6 +37,7 @@ export class MovComponent implements OnInit {
   this.p = this.route.snapshot.paramMap.get('page')
   this.p = Number(this.p)
   this.getMoviesPage();
+
   }
   forward(){
     this.p = this.p + 1
