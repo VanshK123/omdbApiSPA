@@ -1,6 +1,10 @@
-<button [routerLink]="['/search']">
-  Search
-</button>
+
+<input  [formControl]="searchFormControl" type="text" autocomplete="off"  placeholder="Search">
+   
+     <button [routerLink]="['/search', value,1,'temp']">
+      Search
+    </button>
+<button [routerLink]="['/search']">Home</button>
 <br>
 <button button (click)="back()" [routerLink]="['/search', value,p-1 ]">Back</button>
 <button button (click)="forward()" [routerLink]="['/search', value,p+1 ]">Next</button>

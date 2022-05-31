@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { ActivatedRoute } from '@angular/router';
-
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-mov',
@@ -15,15 +15,22 @@ export class MovComponent implements OnInit {
   p: any = 1
   isDone = true;
   year: number=new Date().getFullYear();
-  
+  searchFormControl = new FormControl();
   checked: boolean = false;
+
   constructor(private appService: MovieService, private route: ActivatedRoute) { }
   
   ngOnInit(): void {
-    
+    this.searchFormControl.valueChanges
+
+    .subscribe(newValue => {
+      this.value = newValue;
+    }
+    );
   this.value = this.route.snapshot.paramMap.get('mov')
   this.p = Number(this.route.snapshot.paramMap.get('page'))
   this.getMoviesPage();
+ 
 
   }
   forward(){
@@ -39,7 +46,7 @@ export class MovComponent implements OnInit {
     this.appService.getMoviesAtPage(this.value,(this.p)).subscribe(data => {
     
           this.movies = data;
-         console.log(this.movies)
+         
       })   
   }
 

@@ -7,7 +7,8 @@ const routes: Routes = [
   
   { path: '', component: SearchComponent},
   { path: 'search', component: SearchComponent },
-  {path: 'search/:mov/:page', component: MovComponent}
+  {path: 'search/:mov/:page', component: MovComponent},
+  {path: 'search/:mov/:page/temp', component: MovComponent}
   
 ];
 
