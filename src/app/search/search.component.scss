@@ -1,0 +1,55 @@
+body{
+    
+    width: auto;
+    height: auto;
+   content:"";
+    
+}
+.searchBar{
+    margin: auto;
+    margin-left: 490px; 
+}
+.searchBar input{
+    width: 500px;
+    height: 40px;
+    border: none;
+    border-bottom:  2px solid blue;
+}
+.b1{
+    margin: auto;
+    height: 40px;
+    width: auto;
+    border-radius: 7px;
+    background-color:white;
+    border:none;    
+    align-self: center;
+}
+.head{
+    margin: auto;
+    background-color: #001399;
+    height: 55px;
+    text-align: left;
+    padding: 10px;
+    color: white;
+}
+.para{
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    margin-top: 200px;
+    color: black;
+    font-size: 40px;
+    z-index: 1;
+    font-family: Impact;    
+    
+}
+
+body{
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(https://i.redd.it/4fxxbm4opjd31.jpg);
+    height: 100%;
+    width: auto;
+    
+}
+
+
+

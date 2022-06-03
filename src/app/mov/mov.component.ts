@@ -56,7 +56,5 @@ export class MovComponent implements OnInit {
     
   }
   
-  
- 
  
 }

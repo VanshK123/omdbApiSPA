@@ -1,35 +1,41 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<h1 class = "head"><a href="/search" style="text-decoration: none; color:white;">OMDB Movies</a></h1>
+<body>
+  <form class = "searchBar">
+  <input  [formControl]="searchFormControl" type="text" autocomplete="off"  placeholder="Search">
+  <button class="b1" [routerLink]="['/search',value,1,'temp']">
+    <i class="material-icons">search</i>
+ </button>
+ </form>
+ <input type="checkbox" (change)="check($event)" class="checkBox"> Less than 10 year old
+ <br>
 
-<input  [formControl]="searchFormControl" type="text" autocomplete="off"  placeholder="Search">
-   
-     <button [routerLink]="['/search', value,1,'temp']">
-      Search
-    </button>
-<button [routerLink]="['/search']">Home</button>
+<button class="b3" button (click)="back()" [routerLink]="['/search', value,p-1 ]"><i class="material-icons">arrow_back</i></button>
+<button class="b4" button (click)="forward()" [routerLink]="['/search', value,p+1 ]"><i class = "material-icons">arrow_forward</i></button>
 <br>
-<button button (click)="back()" [routerLink]="['/search', value,p-1 ]">Back</button>
-<button button (click)="forward()" [routerLink]="['/search', value,p+1 ]">Next</button>
-
-<input type="checkbox" (change)="check($event)"> Less than 10 year old
-
-<div *ngFor="let item of [].constructor(1); let i = index">
+<p style="color:white">.</p>
   <table>
     <tbody>
+      <th>Poster</th>
+      <th>Title</th>
+      <th>Year</th>
       <tr *ngFor="let x of movies; let i = index">
         <ng-container *ngIf="(checked && ((year - x.year) < 10)) || (!checked)">
+          <td>
+            <span><img src="{{x.poster}}" height='128' width="128"></span>
+          </td>
           <td>
             <span>{{x.title}}</span>
           </td>
           <td>
             <span>{{x.year}}</span>
           </td>
-          <td>
-            <span><img src="{{x.poster}}" height='128' width="128"></span>
-          </td>
         </ng-container>
       </tr>
 
     </tbody>
   </table>
-</div>
-<button button (click)="back()" [routerLink]="['/search', value,p-1 ]">Back</button>
-<button button (click)="forward()" [routerLink]="['/search', value,p+1 ]">Next</button>
+
+<button class="b5" button (click)="back()" [routerLink]="['/search', value,p-1 ]"><i class="material-icons">arrow_back</i></button>
+<button class="b6" button (click)="forward()" [routerLink]="['/search', value,p+1 ]"><i class="material-icons">arrow_forward</i></button>
+</body>
