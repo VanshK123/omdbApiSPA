@@ -1,7 +1,8 @@
 th, td {
-    padding-right: 30px;
+    padding: 30px;
     border: none;
     text-align: center;
+    table-layout: auto;
     
   }
 
@@ -14,40 +15,18 @@ th, td {
 
 }
 
-.b3{
-    border: none;
-    border-radius: 7px;
-    background-color:#37acda;
-    color: white;
-    
-}
-.b4{
+.b2{
     border: none;
     border-radius: 7px;
     background-color:#37acda;
     color: white;
     margin-left: 5px;
-    
 }
-.b5{
-    border: none;
-    border-radius: 7px;
-    background-color:#37acda;
-    color: white;
-    
-    
-}
-.b6{
-    border: none;
-    border-radius: 7px;
-    background-color:#37acda;
-    margin-left: 5px;
-    color: white;
-}
+
 body,html{    
     height: auto;
     align-self: auto;
-    margin-left: 500px;   
+    text-align: center; 
 }
 .searchBar{
     
@@ -68,11 +47,11 @@ body,html{
     background-color: #001399;
     height: 55px;
     text-align: left;
-    padding: 10px;
+    margin-bottom: 5px;
+    padding-left: 10px;
     color: white;
 }
 .checkBox{
-    margin-left: 320px;
-    margin-bottom: 20px;
+   align-content: flex-start;
 }
 
