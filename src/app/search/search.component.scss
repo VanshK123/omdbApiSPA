@@ -2,15 +2,16 @@ body{
     
     width: auto;
     height: auto;
+    text-align: center;
    content:"";
     
 }
 .searchBar{
     margin: auto;
-    margin-left: 490px; 
+     
 }
 .searchBar input{
-    width: 500px;
+    width: 35%;
     height: 40px;
     border: none;
     border-bottom:  2px solid blue;
